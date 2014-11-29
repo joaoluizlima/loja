@@ -1,16 +1,13 @@
 <?php 
 
-	echo "string";
-	
 	// controle de rotas e sessão
-
 	$p = $_GET['p'];
 	$html = '';
 
 	include('php/templates.php');
 
 	if(!isset($usuario) && !isset($usuario)){
-		echo "nao esta logado<br>";
+		echo "<span class='echo_php'>nao esta logado</span><br>";
 		if(!isset($p)){
 			// está na capa
 			$html = conteudo_capa();
@@ -20,8 +17,7 @@
 				case 'cadastrese':
 					include('php/config.php');
 					$html = form_cadastro_clientes();
-					echo "cadastro";
-
+					echo "<span class='echo_php'>cadastro</span><br>";
 					break;				
 				default:
 					$html = conteudo_capa(); // demais valores para p

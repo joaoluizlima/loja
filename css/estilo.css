@@ -54,3 +54,4 @@ body{  background-image: url('../imagens/universo.png') }
 .container{ border: 1px solid #000; min-height: 700px }
 .form-cadastro-clientes{ margin: 0 auto; width: 300px }
 .conteudo{ float: left; width: 100% }
+.echo_php{ color: #fff }

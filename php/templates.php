@@ -1,70 +1,10 @@
- <!DOCTYPE HTML>
-  <html lang="pt-br">
-  <head>
-  	<meta charset="UTF-8">
-  	<link rel="icon" href="imagens/favicon.ico" type="image/x-icon" />
-  	<link rel="stylesheet" type="text/css" href="css/estilo.css">
-  	<!-- este site usa Font Awesome by Dave Gandy - http://fontawesome.io -->
-	<link rel="stylesheet" href="fontes/font-awesome-4.2.0/css/font-awesome.min.css"/>
-	<!-- este site usa Font Awesome by Dave Gandy - http://fontawesome.io -->
-
-	<!-- JQuery local -->
-	<script src="scripts/jquery-1.11.1.min.js"></script>
-	<!-- JQuery local fim  -->
-
-	<script type="text/javascript" src="scripts/app.js"></script>
-
-	<!-- owl carousel -->
-	<link rel="stylesheet" type="text/css" href="scripts/owl.carousel/owl-carousel/owl.carousel.css" />	
-	<link rel="stylesheet" href="scripts/owl.carousel/owl-carousel/owl.theme.css" />
-	<script type="text/javascript" src="scripts/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
-	<!-- owl carousel fim -->
+<?php 
 
 
-
-  	<title>Loja</title>
-  </head>
-  <body>
-  	<!-- tudo -->
-  	<div class="tudo">
-  		<!-- container -->
-  		<div class="container">
-
-  			<div class="login-topo">
-  				<!-- login -->
-  				<div class="login">
-  					<a href="#" class="cadastre-se">Cadastre-se</a>
-		  			<form action="login.php" method="post" class="form-login">
-		  				<input type="text" name="email" placeholder="email">
-		  				<input type="password" name="login" placeholder="senha">
-		  				<div class="form-login-submit">
-		  					<i class="fa fa-sign-in"></i>
-		  					<span>entrar</span>
-		  				</div>
-		  			</form>
-		  		</div>
-		  		<!-- login fim -->
-		  		<!-- topo -->
-		  		<div class="topo">  	
-		  			<img src="imagens/logo.jpg">  			
-		  		</div>
-		  		<!-- topo fim -->
-  			</div>
-	  	   
-
-	  		<div class="menu">
-	  			<ul>
-	  				<li><a href="">Home</a></li>
-	  				<li><a href="">Produtos</a></li>
-	  				<li><a href="">Categorias</a></li>
-	  				<li><a href="">Parceiros</a></li>
-	  				<li><a href="">Quem somos</a></li>
-	  				<li><a href="">Contato</a></li>  			
-	  			</ul>
-	  		</div>
-	  		<!-- conteudo -->
-	  		<div>
-	  			<!-- cabecalho -->
+// retorna o carrosel e a div contendo as categorias, produtos e um form de busca
+function conteudo_capa(){
+	
+	  	return	'<!-- cabecalho -->
 	  			<div class="cabecalho">  	
 					<div id="owl-demo" class="owl-carousel owl-theme">
 					 
@@ -185,21 +125,59 @@
 			  			</div>		 
 		  			</div>
 		  		</div>	  
-		  		<!-- categorias-produtos fim -->
-	  		</div>
-	  		<!-- conteudo fim -->
-	  			
-  		</div>
-  		<!-- fim container -->  
-  		<!-- rodape -->
-		<footer class="rodape-creditos">
-			<p>Design by /Buckethead KFC</p>
-		</footer>
-		<!-- rodape fim -->		
-  	</div>
-  	<!-- fim tudo -->
-	
-  		
+		  		<!-- categorias-produtos fim -->';
+}
 
-  </body>
- </html>
+
+function form_cadastro_clientes(){
+		return '<div class="form-cadastro-clientes">
+					<fieldset>
+		  				<legend>Castastro de Clientes</legend>
+		  				<form method="get" action="php/formularios.php">
+		  					<input type="hidden" name="formulario" style="display:none" value="cadastro">
+		  					<table>
+		  						<tr> 
+		  							<td>
+		  								<label>Nome: </label>
+		  							</td>
+		  							<td>
+		  								<input type="text" name="nome">
+		  							</td>
+		  						</tr>
+		  						<tr>
+		  							<td>
+		  								<label>E-mail: </label>
+		  							</td>
+		  							<td>
+		  								<input type="text" name="email"> <!-- depois trocar para type="email" -->
+		  							</td>
+		  						</tr>
+		  						<tr>
+		  							<td>
+		  								<label>Senha: </label>
+		  							</td>
+		  							<td>
+		  								<input type="password" name="senha">
+		  							</td>
+		  						</tr>
+		  						<tr>
+		  							<td>
+		  								<label>Telefone: </label>
+		  							</td>
+		  							<td>
+		  								<input type="text" name="telefone">
+		  							</td>
+		  						</tr>
+		  						<tr>
+		  							<td>
+		  								<input type="submit" value="enviar">
+		  							</td>
+		  							
+		  						</tr>
+		  					</table>
+		  				</form>
+		  			</fieldset>		  			
+		  		</div>';
+}
+
+?>

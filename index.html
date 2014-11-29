@@ -2,139 +2,203 @@
   <html lang="pt-br">
   <head>
   	<meta charset="UTF-8">
+  	<link rel="icon" href="imagens/favicon.ico" type="image/x-icon" />
   	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+  	<!-- este site usa Font Awesome by Dave Gandy - http://fontawesome.io -->
+	<link rel="stylesheet" href="fontes/font-awesome-4.2.0/css/font-awesome.min.css"/>
+	<!-- este site usa Font Awesome by Dave Gandy - http://fontawesome.io -->
+
+	<!-- JQuery local -->
+	<script src="scripts/jquery-1.11.1.min.js"></script>
+	<!-- JQuery local fim  -->
+
+	<script type="text/javascript" src="scripts/app.js"></script>
+
+	<!-- owl carousel -->
+	<link rel="stylesheet" type="text/css" href="scripts/owl.carousel/owl-carousel/owl.carousel.css" />	
+	<link rel="stylesheet" href="scripts/owl.carousel/owl-carousel/owl.theme.css" />
+	<script type="text/javascript" src="scripts/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
+	<!-- owl carousel fim -->
+
+
+
   	<title>Loja</title>
   </head>
   <body>
+  	<!-- tudo -->
   	<div class="tudo">
-  	    <div class="login">
-  			<form action="login.php" method="post" class="form-login">
-  				<input type="text" name="email" placeholder="email">
-  				<input type="password" name="login" placeholder="senha">
-  				<input type="submit" value="entrar">
-  			</form>
-  		</div>
-  		<div class="topo">  	
-  			<img src="logo.jpg">
-  		</div>
-  		<div class="menu">
-  			<ul>
-  				<li>Computers</li>
-  				<li>Cooking</li>
-  				<li>Education</li>
-  				<li>Fiction</li>
-  				<li>Health</li>
-  				<li>Mathematics</li>
-  				<li>Medical</li>
-  				<li>Reference</li>
-  				<li>Science</li>
-  			</ul>
-  		</div>
-  		<div class="cabecalho">  	
+  		<!-- container -->
+  		<div class="container">
 
-  		</div>
-		<div class="categorias-produtos">  	
-			<div class="categorias">  	
-				<h1>Categorias</h1>
-				<ul>
-	  				<li>Computers</li>
-	  				<li>Cooking</li>
-	  				<li>Education</li>
-	  				<li>Fiction</li>
-	  				<li>Health</li>
-	  				<li>Mathematics</li>
-	  				<li>Medical</li>
-	  				<li>Reference</li>
-	  				<li>Science</li>
-  				</ul>
+  			<div class="login-topo">
+  				<!-- login -->
+  				<div class="login">
+  					<a href="#" class="cadastre-se">Cadastre-se</a>
+		  			<form action="login.php" method="post" class="form-login">
+		  				<input type="text" name="email" placeholder="email">
+		  				<input type="password" name="login" placeholder="senha">
+		  				<div class="form-login-submit">
+		  					<i class="fa fa-sign-in"></i>
+		  					<span>entrar</span>
+		  				</div>
+		  			</form>
+		  		</div>
+		  		<!-- login fim -->
+		  		<!-- topo -->
+		  		<div class="topo">  	
+		  			<img src="logo.jpg">  			
+		  		</div>
+		  		<!-- topo fim -->
   			</div>
-  			<div class="produtos">  	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	
-	  			<div class="box-produto">
-	  				<img src="foto-produto.jpg">
-	  				<h1>Livro xxx</h1>
-	  				<p>$60</p>
-	  			</div>	  			
-  			</div>
+	  	   
+
+	  		<div class="menu">
+	  			<ul>
+	  				<li><a href="">Home</a></li>
+	  				<li><a href="">Produtos</a></li>
+	  				<li><a href="">Categorias</a></li>
+	  				<li><a href="">Parceiros</a></li>
+	  				<li><a href="">Quem somos</a></li>
+	  				<li><a href="">Contato</a></li>  			
+	  			</ul>
+	  		</div>
+	  		<!-- conteudo -->
+	  		<div>
+	  			<!-- cabecalho -->
+	  			<div class="cabecalho">  	
+					<div id="owl-demo" class="owl-carousel owl-theme">
+					 
+					  <div class="item"><img src="imagens/fullimage1.jpg" alt="The Last of us"></div>
+					  <div class="item"><img src="imagens/fullimage2.jpg" alt="GTA V"></div>
+					  <div class="item"><img src="imagens/fullimage3.jpg" alt="Mirror Edge"></div>
+					 
+					</div>
+		  		</div>
+		  		<!-- cabecalho fim -->
+		  		<!-- categorias-produtos -->
+				<div class="categorias-produtos">  	
+					<form class="form-topo">
+		  				<input type="text" class="input-busca" placeholder="pesquise por nomes de produtos">
+		  				<div class="busca-topo">
+		  					<i class="fa fa-search"></i>
+		  					<span class="btn-buscar">buscar</span>
+		  				</div>
+		  			</form>
+					<div class="categorias">  	
+						<h1>Categorias</h1>
+						<ul>
+			  				<li><a href="#">Eletrônicos</a></li>
+			  				<li><a href="#">Eletrodomésticos</a></li>
+			  				<li><a href="#">Informática</a></li>
+			  				<li><a href="#">Livros</a></li>
+			  				<li><a href="#">Brinquedos</a></li>
+			  				<li><a href="#">Saúde e Beleza</a></li>
+			  				<li><a href="#">Escritório</a></li>
+			  				<li><a href="#">Esporte e Lazer</a></li>
+			  				<li><a href="#">Relógios</a></li>
+		  				</ul>
+		  			</div>
+		  			<div class="produtos"> 
+		  			  	<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>				  	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>	
+			  			<div class="box-produto">
+			  				<a href="#">
+			  					<img src="imagens/foto-produto.jpg">
+				  				<h1>Livro xxx</h1>
+				  				<p>$60</p>
+			  				</a>		  				
+			  			</div>		 
+		  			</div>
+		  		</div>	  
+		  		<!-- categorias-produtos fim -->
+	  		</div>
+	  		<!-- conteudo fim -->
+	  			
   		</div>
+  		<!-- fim container -->  
+  		<!-- rodape -->
+		<footer class="rodape-creditos">
+			<p>Design by /Buckethead KFC</p>
+		</footer>
+		<!-- rodape fim -->		
   	</div>
-  	<footer class="rodape">
-  		<div class="rodape-categorias">
-  			
-  		</div>
-  		<div class="rodape-creditos">
-  			<p>Todos os dirietos reservados @ 2014 </p>
-  		</div>
-  	</footer>
+  	<!-- fim tudo -->
+	
   		
 
   </body>

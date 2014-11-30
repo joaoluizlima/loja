@@ -1,5 +1,11 @@
 <?php 
 
+$pAjax = $_GET['p'];
+
+if($pAjax == 'cadastro-categorias'){
+	$form = form_cadastro_categorias();
+	echo $form;
+}
 
 // retorna o carrosel e a div contendo as categorias, produtos e um form de busca
 function conteudo_capa(){
@@ -133,8 +139,8 @@ function form_cadastro_clientes(){
 		return '<div class="form-cadastro-clientes">
 					<fieldset>
 		  				<legend>Castastro de Clientes</legend>
-		  				<form method="get" action="php/formularios.php">
-		  					<input type="hidden" name="formulario" style="display:none" value="cadastro">
+		  				<form method="get" action="php/banco.php">
+		  					<input type="hidden" name="escondido" style="display:none" value="cadastro">
 		  					<table>
 		  						<tr> 
 		  							<td>
@@ -179,5 +185,142 @@ function form_cadastro_clientes(){
 		  			</fieldset>		  			
 		  		</div>';
 }
+
+
+
+function form_login(){
+	return '<a href="?p=cadastrese" class="cadastre-se">Cadastre-se</a>
+				<form action="php/banco.php" method="get" class="form-login">
+		  				<input type="hidden" name="escondido" value="login">
+		  				<input type="text" name="email" placeholder="email">
+		  				<input type="password" name="senha" placeholder="senha">
+		  				<div class="form-login-submit">
+		  					<i class="fa fa-sign-in"></i>
+		  					<span>entrar</span>
+		  				</div>
+		  				<input type="submit" style="display:none">
+		  			</form>';
+}
+
+function name_logout(){
+	return '
+	<style>.login{ width:30% !important; float: right }
+	</style>
+	<div class="name_id">
+		<p>'.$_SESSION['nome'].'</p>
+		<p>'.$_SESSION['login'].'</p>
+	</div>
+			<div class="form-login-logout">
+				<i class="fa fa-sign-out"></i>
+				<span>sair</span>
+			</div>';
+}
+
+
+function painel(){
+
+	return '<style>.menu{ display:none } </style>
+			<h1 id="titulo-painel">Administração da loja</h1>
+			<div class="painel">
+				<div class="coluna-opcoes">
+					<div class="pesquisa-admin">
+						<form class="form-topo form-admin">
+			  				<input type="text" class="input-busca" placeholder="produtos...">
+			  				<div class="busca-topo">
+			  					<i class="fa fa-search"></i>
+			  					<span class="btn-buscar">buscar</span>
+			  				</div>
+			  			</form>
+					</div>
+					<div class="opcoes">
+						<div class="item-op op-compras">
+							<i class="fa fa-shopping-cart"></i>
+							Compras
+						</div>
+						<div class="item-op op-produtos">
+							<i class="fa fa-cube"></i>
+							Produtos
+							<!-- opcoes sub -->
+							<div class="opcoes-sub">
+								<div class="sub-item-op">
+									<i class="fa fa-angle-right produtos-listar"></i> Listar
+								</div>
+								<div class="sub-item-op">
+									<i class="fa fa-angle-right produtos-listar"></i> Cadastrar
+								</div>
+							</div>
+							<!-- opcoes sub fim -->
+						</div>
+
+						<div class="item-op op-categorias">
+							<i class="fa fa-folder-open"></i>
+							Categorias
+							<!-- opcoes sub -->
+							<div class="opcoes-sub">
+								<div class="sub-item-op categorias-listar">
+									<i class="fa fa-angle-right"></i> Listar
+								</div>
+								<div class="sub-item-op categorias-cadastrar">
+									<i class="fa fa-angle-right"></i> Cadastrar
+								</div>
+							</div>
+							<!-- opcoes sub fim -->
+						</div>
+						<div class="item-op op-clientes">
+							<i class="fa fa-users"></i>
+							Clientes
+						</div>
+						<div class="item-op op-contatos">
+							<i class="fa fa-phone-square"></i>
+							Contatos
+						</div>
+					</div>
+				</div>
+				<div class="coluna-conteudo">
+					
+				</div>
+			</div>';
+}
+
+
+function form_cadastro_categorias(){
+
+
+	return '<div class="form-cadastro-clientes form-cadastro-categorias">
+			<fieldset>
+				<legend>Castastro de Categorias</legend>
+				<form method="get" action="php/banco.php">
+					<input type="hidden" name="escondido" style="display:none" value="cadastro">
+					<table>
+						<tbody><tr> 
+							<td>
+								<label>Nome: </label>
+							</td>
+							<td>
+								<input type="text" name="nome">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<label>Descrição: </label>
+							</td>
+							<td>
+								<input type="text" name="descricao">
+							</td>
+						</tr>
+						<tr>
+							<td>
+							</td>
+							<td>
+								<input type="submit" value="enviar">
+							</td>
+							
+						</tr>
+					</tbody></table>
+				</form>
+			</fieldset>		  			
+		</div>';
+}
+
 
 ?>

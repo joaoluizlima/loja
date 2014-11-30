@@ -1,13 +1,39 @@
 <?php 
+	
+  	session_start();
+
+  	if(isset($_GET['logout'])){
+
+  		if($_GET['logout'] == 'true'){
+	  		//Limpa
+		    unset ($_SESSION['login']);
+		    unset ($_SESSION['id']);
+		    unset ($_SESSION['nome']);	 
+
+		    //Destrói
+		    session_destroy();
+		    header('location:index.php');
+  		}
+
+  	}
+
+  	if(isset($_SESSION['login']) &&  isset($_SESSION['id']) ){
+  		echo 'login: '.$_SESSION['login'];
+  		echo '<br>id: '.$_SESSION['id'];
+  		echo '<br>nome: '.$_SESSION['nome'];
+  		echo '<br>tipo: '.$_SESSION['tipo'];
+  	}
 
 	// controle de rotas e sessão
 	$p = $_GET['p'];
 	$html = '';
+	$form_or_name;
 
 	include('php/templates.php');
 
-	if(!isset($usuario) && !isset($usuario)){
-		echo "<span class='echo_php'>nao esta logado</span><br>";
+	if(!isset($_SESSION['login']) && !isset($_SESSION['id'])){
+		echo "nao esta logado";
+		$form_or_name = form_login();
 		if(!isset($p)){
 			// está na capa
 			$html = conteudo_capa();
@@ -15,7 +41,7 @@
 		else{
 			switch ($p) {
 				case 'cadastrese':
-					include('php/config.php');
+					include('php/banco.php');
 					$html = form_cadastro_clientes();
 					echo "<span class='echo_php'>cadastro</span><br>";
 					break;				
@@ -25,8 +51,44 @@
 			}
 		}
 	}
-	else // logado
-		echo "LOGADO";
+	else{ // logado
+		$form_or_name = name_logout();
+
+		$tipo = $_SESSION['tipo'];
+
+		if($tipo == 'cliente'){
+			if(!isset($p)){
+			// está na capa
+			$html = conteudo_capa();
+			}
+			else{
+				switch ($p) {
+					case '':				
+						break;				
+					default:
+						$html = conteudo_capa(); // demais valores para p
+						break;
+				}
+			}
+		}
+		else // admin
+		{
+			if(!isset($p)){
+				// está na capa
+				$html = painel();
+			}
+			else{
+				switch ($p) {
+					case '':				
+						break;				
+					default:
+						$html = painel(); // demais valores para p
+						break;
+				}
+			}
+		}
+		
+	} // logado
 
 
 ?>
@@ -65,16 +127,12 @@
 
   			<div class="login-topo">
   				<!-- login -->
-  				<div class="login">
-  					<a href="?p=cadastrese" class="cadastre-se">Cadastre-se</a>
-		  			<form action="login.php" method="post" class="form-login">
-		  				<input type="text" name="email" placeholder="email">
-		  				<input type="password" name="login" placeholder="senha">
-		  				<div class="form-login-submit">
-		  					<i class="fa fa-sign-in"></i>
-		  					<span>entrar</span>
-		  				</div>
-		  			</form>
+  				<div class="login">  					
+  					<!-- form login -->
+		  			<?php 
+		  				echo $form_or_name;
+		  			?>
+		  			<!-- form login fim -->
 		  		</div>
 		  		<!-- login fim -->
 		  		<!-- topo -->
@@ -117,4 +175,4 @@
   		
 
   </body>
- </html>
+</html>

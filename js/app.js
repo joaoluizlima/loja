@@ -4,11 +4,17 @@ var app = (function(){
 		logar();
 		buscar();
 		carrossel();
+		painel();
 	}
 
 	function logar(){
 		$('.form-login-submit').click(function(){
-			alert('logando...');
+			$('.form-login').submit();
+		});
+
+		$('.form-login-logout').click(function(){
+			alert('bye');
+			location.href="index.php?logout=true";
 		});
 	}
 
@@ -16,6 +22,32 @@ var app = (function(){
 		$('.btn-buscar').click(function(){
 			alert('pesquisando...');
 		});
+	}
+
+
+	function painel(){
+		$('.item-op').click(function(){
+			$('.opcoes-sub',this).toggleClass('visivel');
+		});
+
+		$('.categorias-listar').click(function(){
+			$.ajax({
+				url: 'php/banco.php?escondido=listar-categorias', success: function(data) {
+					$('.coluna-conteudo').html(data);
+				}
+			});
+		});
+
+
+		$('.categorias-cadastrar').click(function(){
+			$.ajax({
+				url: 'php/templates.php?p=cadastro-categorias', success: function(data) {
+					$('.coluna-conteudo').html(data);
+				}
+			});
+		});
+
+
 	}
 
 	function carrossel(){

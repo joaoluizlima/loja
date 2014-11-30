@@ -262,7 +262,7 @@ function painel(){
 								</div>
 								<div class="sub-item-op categorias-cadastrar">
 									<i class="fa fa-angle-right"></i> Cadastrar
-								</div>
+								</div>								
 							</div>
 							<!-- opcoes sub fim -->
 						</div>
@@ -277,7 +277,7 @@ function painel(){
 					</div>
 				</div>
 				<div class="coluna-conteudo">
-					
+					<p class="conteudo-msg"></p>
 				</div>
 			</div>';
 }
@@ -286,11 +286,19 @@ function painel(){
 function form_cadastro_categorias(){
 
 
-	return '<div class="form-cadastro-clientes form-cadastro-categorias">
+	return '
+		<style>
+		table, th, td {
+		    border:none !important;
+		    border-collapse: collapse;
+		    padding-left: 10px;
+		}
+		</style>
+	<div class="form-cadastro-clientes form-cadastro-categorias">
 			<fieldset>
 				<legend>Castastro de Categorias</legend>
 				<form method="get" action="php/banco.php">
-					<input type="hidden" name="escondido" style="display:none" value="cadastro">
+					<input type="hidden" name="escondido" style="display:none" value="cadastro-categorias">
 					<table>
 						<tbody><tr> 
 							<td>

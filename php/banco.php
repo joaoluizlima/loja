@@ -16,8 +16,17 @@ if(isset($_GET['escondido'])){
 		login($conexao);
 	}
 	elseif ($escondido == 'listar-categorias') {
-		$categorias = categorias($conexao);
+		$categorias = listar_categorias($conexao);
 		echo $categorias;
+	}
+	elseif ($escondido == 'cadastro-categorias') {
+		cadastro_categorias($conexao);
+	}
+	elseif ($escondido == 'deletar') {
+		$alvo = $_GET['alvo'];
+		if($alvo == 'categorias'){
+			deletar_categorias($conexao);	
+		}		
 	}
 }
 
@@ -34,9 +43,35 @@ function cadastro_clientes($conexao){
 	
 	mysqli_query($conexao,$query) or die('erro :p');
 
-	echo "O cliente $nome foi cadastrado com sucesso!";
+	echo "O cliente $nome foi cadastrado com sucesso!";	
+}
+
+function cadastro_categorias($conexao){
+	$nome = $_GET['nome'];
+	$descricao = $_GET['descricao'];
+
+	$query = "INSERT INTO Categoria (nome,descricao) VALUES ('$nome','$descricao')";	
+	
+	mysqli_query($conexao,$query) or die('erro :p');
+
+	echo "A categoria $nome foi cadastrada com sucesso!";
+	header('location:../index.php?acao=categorias-listar#titulo-painel');
 	
 }
+
+
+function deletar_categorias($conexao){
+	$id = $_GET['id'];
+
+	$query = "DELETE FROM Categoria WHERE id = $id";	
+	
+	mysqli_query($conexao,$query) or die('erro :p');
+
+	echo "A categoria $nome foi deletada com sucesso!";
+	header('location:../index.php?acao=categorias-listar#titulo-painel');
+	
+}
+
 
 
 function login($conexao){
@@ -134,7 +169,7 @@ function login($conexao){
 } // login
 
 
-function categorias($conexao){
+function listar_categorias($conexao){
 	
 	$linhas = '';
 	$query = "SELECT * FROM Categoria";
@@ -144,19 +179,31 @@ function categorias($conexao){
 
 	while ($linha = mysqli_fetch_assoc($resultado)) {
 		$linhas .= '<tr>
+						<td><input type="checkbox" name="id" value="'.$linha['id'].'" class="checkbox-categorias"></td>
 						<td>'.$linha['nome'].'</td>
 						<td>'.$linha['descricao'].'</td>
 					</tr>';
 	}
 
-	$tabela =  '<h1>Categorias</h1>
-				<table>					
-					<tr>
-						<th>Nome</th>
-						<th>Descrição</th>
-					</tr>
-					'.$linhas.'
-				</table>';
+	$tabela =  '
+				<h1>Categorias</h1>
+					<table border="1" width="100%">					
+						<tr>
+							<th></th>
+							<th>Nome</th>
+							<th>Descrição</th>
+						</tr>
+						'.$linhas.'
+					</table>
+					<div class="btn-opcoes" id="btn-editar">
+						<i class="fa fa-pencil-square-o"></i>
+						<span>editar</span>
+					</div>
+					<div class="btn-opcoes" id="btn-deletar" onclick="deletar(\'categorias\');" >
+						<i class="fa fa-trash-o"></i>
+						<span>excluir</span>
+					</div>			
+				';
 
 	return $tabela;
 }

@@ -2,13 +2,20 @@
 	
   	session_start();
 
+  	if(isset($_GET['acao'])) {
+  		$acao = $_GET['acao'];
+  		echo "<span class='acao'>".$acao."</span>";
+  	}
+
+
   	if(isset($_GET['logout'])){
 
   		if($_GET['logout'] == 'true'){
 	  		//Limpa
-		    unset ($_SESSION['login']);
+		   	unset ($_SESSION['login']);
 		    unset ($_SESSION['id']);
-		    unset ($_SESSION['nome']);	 
+		    unset ($_SESSION['nome']);
+		    unset ($_SESSION['tipo']);	 
 
 		    //Destrói
 		    session_destroy();
@@ -107,7 +114,10 @@
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<!-- JQuery local fim  -->
 
+	<!-- scripts js -->
 	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/ajudantes.js"></script>
+	<!-- scripts js fim -->
 
 	<!-- owl carousel -->
 	<link rel="stylesheet" type="text/css" href="js/owl.carousel/owl-carousel/owl.carousel.css" />	

@@ -14,7 +14,7 @@ function deletar(alvo){
 
 			var array_ids = id.join(' , ');
 			
-			alert('categorias a serem deletadas: '+array_ids);
+			//alert('categorias a serem deletadas: '+array_ids);
 
 
 			$.ajax({

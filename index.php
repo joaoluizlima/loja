@@ -176,7 +176,7 @@
   		<!-- container fim -->  
   		<!-- rodape -->
 		<footer class="rodape-creditos">
-			<p>Design by /Buckethead KFC</p>
+			<p>Manaus / 2014</p>
 		</footer>
 		<!-- rodape fim -->		
   	</div>

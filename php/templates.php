@@ -136,7 +136,16 @@ function conteudo_capa(){
 
 
 function form_cadastro_clientes(){
-		return '<div class="form-cadastro-clientes">
+		return '
+		<style>
+		table, th, td {
+		    border:none !important;
+		    border-collapse: collapse;
+		    padding-left: 10px;
+		}
+		</style>
+
+		<div class="form-cadastro-clientes">
 					<fieldset>
 		  				<legend>Castastro de Clientes</legend>
 		  				<form method="get" action="php/banco.php">
@@ -175,6 +184,8 @@ function form_cadastro_clientes(){
 		  							</td>
 		  						</tr>
 		  						<tr>
+		  							<td>
+		  							</td>
 		  							<td>
 		  								<input type="submit" value="enviar">
 		  							</td>

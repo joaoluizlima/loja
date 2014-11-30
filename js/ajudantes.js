@@ -23,7 +23,15 @@ function deletar(alvo){
 						alert('A categoria foi deletada com sucesso');
 					else if(id.length > 1){
 						alert('As categorias foram deletadas com sucesso');
-						$('.categorias-listar').click();
+
+					}
+
+					if(data == 'ok'){
+						$.ajax({
+							url: 'php/banco.php?escondido=listar-categorias', success: function(data) {
+								$('.coluna-conteudo').html(data);
+							}
+						});
 					}
 
 				}	

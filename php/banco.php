@@ -25,7 +25,8 @@ if(isset($_GET['escondido'])){
 	elseif ($escondido == 'deletar') {
 		$alvo = $_GET['alvo'];
 		if($alvo == 'categorias'){
-			deletar_categorias($conexao);	
+			deletar_categorias($conexao);
+			echo "ok";	
 		}		
 	}
 }
@@ -66,9 +67,6 @@ function deletar_categorias($conexao){
 	$query = "DELETE FROM Categoria WHERE id in (".$array_ids.")";	
 	
 	mysqli_query($conexao,$query) or die('erro :p');
-
-	echo "A categoria $nome foi deletada com sucesso!";
-	header('location:../index.php?acao=categorias-listar#titulo-painel');
 	
 }
 

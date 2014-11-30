@@ -61,9 +61,9 @@ function cadastro_categorias($conexao){
 
 
 function deletar_categorias($conexao){
-	$id = $_GET['id'];
+	$array_ids = $_GET['array_ids'];
 
-	$query = "DELETE FROM Categoria WHERE id = $id";	
+	$query = "DELETE FROM Categoria WHERE id in (".$array_ids.")";	
 	
 	mysqli_query($conexao,$query) or die('erro :p');
 

@@ -12,12 +12,24 @@ function deletar(alvo){
 				
 			});
 
-			var array_ids = id.join('+');
-			console.log(array_ids);
+			var array_ids = id.join(' , ');
 			
-			alert('categorias a serem deletadas: '+id);
+			alert('categorias a serem deletadas: '+array_ids);
+
+
+			$.ajax({
+				url: 'php/banco.php?escondido=deletar&alvo=categorias&array_ids='+array_ids, success: function(data) {
+					if(id.length == 1)
+						alert('A categoria foi deletada com sucesso');
+					else if(id.length > 1){
+						alert('As categorias foram deletadas com sucesso');
+						$('.categorias-listar').click();
+					}
+
+				}	
+			});
 		}
-	}
+	} // fim alvo categorias
 		
 	
 }
